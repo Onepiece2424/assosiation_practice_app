@@ -1,2 +1,18 @@
-<h1>Cats#index</h1>
-<p>Find me in app/views/cats/index.html.erb</p>
+<table class="teble">
+  <thead>
+    <tr>
+      <th class="header1">id</th>
+      <th class="header2">name</th>
+      <th class="header3">owner_id</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @cats.each do |cat|  %>
+    <tr>
+      <td><%= cat.id %></td>
+      <td><%= cat.name %></td>
+      <td><%= cat.owner_id %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
