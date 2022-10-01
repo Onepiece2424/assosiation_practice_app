@@ -56,4 +56,26 @@
   </tbody>
 </table>
 
+<h1>catsテーブルにownersテーブルをjoinsメソッドで内部結合</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Owner_id</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cat_owner_joins.each do |cat_owner| %>
+      <tr>
+        <td><%= cat_owner.id %></td>
+        <td><%= cat_owner.name %></td>
+        <td><%= cat_owner.owner_id %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 <%= link_to "Ownerページへ", owners_url %>
