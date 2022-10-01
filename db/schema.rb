@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_01_053841) do
+ActiveRecord::Schema.define(version: 2022_10_01_062040) do
+
+  create_table "cat_children", force: :cascade do |t|
+    t.string "name"
+    t.integer "cat_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["cat_id"], name: "index_cat_children_on_cat_id"
+  end
 
   create_table "cats", force: :cascade do |t|
     t.string "name"
@@ -34,6 +42,7 @@ ActiveRecord::Schema.define(version: 2022_10_01_053841) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "cat_children", "cats"
   add_foreign_key "cats", "owners"
   add_foreign_key "dogs", "owners"
 end
