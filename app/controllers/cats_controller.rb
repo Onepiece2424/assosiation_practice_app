@@ -1,6 +1,7 @@
 class CatsController < ApplicationController
   def index
     @cats = Cat.all
+    @owners = Owner.all
   end
 
   def new

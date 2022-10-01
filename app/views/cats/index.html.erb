@@ -1,3 +1,4 @@
+<h1>catsテーブル</h1>
 <table class="teble">
   <thead>
     <tr>
@@ -12,6 +13,24 @@
       <td><%= cat.id %></td>
       <td><%= cat.name %></td>
       <td><%= cat.owner_id %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h1>ownersテーブル</h1>
+<table class="teble">
+  <thead>
+    <tr>
+      <th class="header1">id</th>
+      <th class="header2">name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @owners.each do |owner|  %>
+    <tr>
+      <td><%= owner.id %></td>
+      <td><%= owner.name %></td>
     </tr>
     <% end %>
   </tbody>
