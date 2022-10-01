@@ -78,5 +78,30 @@
   </tbody>
 </table>
 
+<br>
+<h1>cat_childテーブル</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Cat_id</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cat_childs.each do |cat_child| %>
+      <tr>
+        <td><%= cat_child.id %></td>
+        <td><%= cat_child.name %></td>
+        <td><%= cat_child.cat_id %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
 <%= link_to "Ownerページへ", owners_url %>
 <%= link_to "Dogページへ", dogs_url %>

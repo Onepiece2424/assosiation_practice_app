@@ -4,6 +4,7 @@ class CatsController < ApplicationController
     @owners = Owner.all
     @owner_cat_joins = Owner.joins(:cats)
     @cat_owner_joins =  Cat.joins(:owner)
+    @cat_childs = CatChild.all
   end
 
   def new
