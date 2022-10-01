@@ -22,5 +22,26 @@
 </table>
 
 <br>
+
+<h1>スコープをかけたownersテーブル</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @owner_scope.each do |owner_scope| %>
+      <tr>
+        <td><%= owner_scope.id %></td>
+        <td><%= owner_scope.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
 <%= link_to "Catページへ", cats_url %>
 <%= link_to "Dogページへ", dogs_path %>
