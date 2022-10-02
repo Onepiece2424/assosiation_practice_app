@@ -1,6 +1,6 @@
 class CatsController < ApplicationController
   def index
-    @cats = Cat.includes(:owner)
+    @cats = Cat.eager_load(:owner)
     @owner_cat_joins = Owner.joins(:cats)
     @cat_owner_joins =  Cat.joins(:owner)
     @cat_childs = CatChild.all
