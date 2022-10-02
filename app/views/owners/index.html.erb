@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Owners</h1>
+<h1>ownersテーブル</h1>
 
 <table>
   <thead>
@@ -28,24 +28,26 @@
 
 <br>
 
-<h1>スコープをかけたownersテーブル</h1>
+<h1>catsテーブル</h1>
 
 <table>
   <thead>
     <tr>
       <th>ID</th>
       <th>Name</th>
-      <th>Age</th>
+      <th>Owner_ID</th>
     </tr>
   </thead>
 
   <tbody>
-    <% @owner_scope.each do |owner_scope| %>
-      <tr>
-        <td><%= owner_scope.id %></td>
-        <td><%= owner_scope.name %></td>
-        <td><%= owner_scope.age %></td>
-      </tr>
+    <% @owners.each do |owner| %>
+      <% owner.cats.each do |cat|%>
+        <tr>
+          <td><%= owner.id %></td>
+          <td><%= cat.name %></td>
+          <td><%= cat.owner_id %></td>
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>

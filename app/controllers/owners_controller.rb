@@ -3,8 +3,7 @@ class OwnersController < ApplicationController
 
   # GET /owners or /owners.json
   def index
-    @owners = Owner.all
-    @owner_scope = @owners.joins(:cats).publish
+    @owners = Owner.includes(:cats)
   end
 
   # GET /owners/1 or /owners/1.json
