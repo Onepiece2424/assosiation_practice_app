@@ -7,10 +7,10 @@
     </tr>
   </thead>
   <tbody>
-    <% @owners.each do |owner|  %>
+    <% @cats.each do |cat|  %>
     <tr>
-      <td><%= owner.id %></td>
-      <td><%= owner.name %></td>
+      <td><%= cat.owner.id %></td>
+      <td><%= cat.owner.name %></td>
     </tr>
     <% end %>
   </tbody>
