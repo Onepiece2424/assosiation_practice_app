@@ -28,25 +28,25 @@
 
 <br>
 
-<h1>catsテーブル</h1>
+<h1>cat_childrenテーブル</h1>
 
 <table>
   <thead>
     <tr>
       <th>ID</th>
       <th>Name</th>
-      <th>Owner_ID</th>
     </tr>
   </thead>
 
   <tbody>
     <% @owners.each do |owner| %>
       <% owner.cats.each do |cat|%>
-        <tr>
-          <td><%= owner.id %></td>
-          <td><%= cat.name %></td>
-          <td><%= cat.owner_id %></td>
-        </tr>
+        <% cat.cat_child.each do |child|%>
+          <tr>
+            <td><%= child.id %></td>
+            <td><%= child.name %></td>
+          </tr>
+        <% end %>
       <% end %>
     <% end %>
   </tbody>
