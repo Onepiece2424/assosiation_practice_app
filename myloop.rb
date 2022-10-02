@@ -13,7 +13,7 @@
 # end
 
 # 引数の数が不定なメソッドの書き方
-def foo(*args)
+=begin def foo(*args)
   args
 end
 
@@ -35,3 +35,4 @@ end
 
 p a(1, 2, 3, 4, 5)
 p a(1, 2)
+ =end
