@@ -3,7 +3,7 @@ class CatsController < ApplicationController
     @cats = Cat.eager_load(:owner)
     @owner_cat_joins = Owner.joins(:cats)
     @cat_owner_joins =  Cat.joins(:owner)
-    @cat_childs = CatChild.all
+    @cat_childs = CatChild.eager_load(:cat)
   end
 
   def new
