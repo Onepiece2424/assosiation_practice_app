@@ -3,7 +3,7 @@ class OwnersController < ApplicationController
 
   # GET /owners or /owners.json
   def index
-    @owners = Owner.includes(:cats)
+    @owners = Owner.preload(:cats)
   end
 
   # GET /owners/1 or /owners/1.json
