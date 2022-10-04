@@ -1,0 +1,56 @@
+<p id="notice"><%= notice %></p>
+
+<h1>ownersテーブル</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Sex</th>
+      <th>Income</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @owners.each do |owner| %>
+      <tr>
+        <td><%= owner.id %></td>
+        <td><%= owner.name %></td>
+        <td><%= owner.age %></td>
+        <td><%= owner.sex %></td>
+        <td><%= owner.income %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<h1>cat_childrenテーブル</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @owners.each do |owner| %>
+      <% owner.cats.each do |cat|%>
+        <% cat.cat_child.each do |child|%>
+          <tr>
+            <td><%= child.id %></td>
+            <td><%= child.name %></td>
+          </tr>
+        <% end %>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<%= link_to "Catページへ", cats_url %>
+<%= link_to "Dogページへ", dogs_path %>

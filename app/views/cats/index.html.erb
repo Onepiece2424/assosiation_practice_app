@@ -1,0 +1,110 @@
+<h1>ownersテーブル</h1>
+<table class="teble">
+  <thead>
+    <tr>
+      <th class="header1">id</th>
+      <th class="header2">name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @cats.each do |cat|  %>
+    <tr>
+      <td><%= cat.owner.id %></td>
+      <td><%= cat.owner.name %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h1>catsテーブル</h1>
+<table class="teble">
+  <thead>
+    <tr>
+      <th class="header1">id</th>
+      <th class="header2">name</th>
+      <th class="header3">owner_id</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @cats.each do |cat|  %>
+    <tr>
+      <td><%= cat.id %></td>
+      <td><%= cat.name %></td>
+      <td><%= cat.owner_id %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<h1>cat_childテーブル</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Cat_id</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cat_childs.each do |cat_child| %>
+      <tr>
+        <td><%= cat_child.id %></td>
+        <td><%= cat_child.name %></td>
+        <td><%= cat_child.cat_id %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+
+<h1>ownersテーブルにcatsテーブルをjoinsメソッドで内部結合</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @owner_cat_joins.each do |owner_cat| %>
+      <tr>
+        <td><%= owner_cat.id %></td>
+        <td><%= owner_cat.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h1>catsテーブルにownersテーブルをjoinsメソッドで内部結合</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Owner_id</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cat_owner_joins.each do |cat_owner| %>
+      <tr>
+        <td><%= cat_owner.id %></td>
+        <td><%= cat_owner.name %></td>
+        <td><%= cat_owner.owner_id %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+<br>
+
+<%= link_to "Ownerページへ", owners_url %>
+<%= link_to "Dogページへ", dogs_url %>
