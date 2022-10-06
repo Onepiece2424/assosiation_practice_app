@@ -73,18 +73,29 @@
 # p foo(*args2)
 
 # 引数にハッシュを渡す
-def foo(arg)
-  arg
-end
+# def foo(arg)
+#   arg
+# end
 
-p foo({"a" => 1, "b" => 2})   # {"a"=>1, "b"=>2}
-p foo("a" => 1, "b" => 2)   # {"a"=>1, "b"=>2}
-p foo(a: 1, b: 2)   # {:a=>1, :b=>2}
+# p foo({"a" => 1, "b" => 2})   # {"a"=>1, "b"=>2}
+# p foo("a" => 1, "b" => 2)   # {"a"=>1, "b"=>2}
+# p foo(a: 1, b: 2)   # {:a=>1, :b=>2}
 
-def bar(arg1, arg2)
-  [arg1, arg2]
-end
+# def bar(arg1, arg2)
+#   [arg1, arg2]
+# end
 
-p bar(100, {"a" => 1, "b" => 2})  # [100, {"a"=>1, "b"=>2}]
-p bar(100, "a" => 1, "b" => 2) # [100, {"a"=>1, "b"=>2}]
-p bar(100, a: 1, b: 2)  # [100, {:a=>1, :b=>2}]
+# p bar(100, {"a" => 1, "b" => 2})  # [100, {"a"=>1, "b"=>2}]
+# p bar(100, "a" => 1, "b" => 2) # [100, {"a"=>1, "b"=>2}]
+# p bar(100, a: 1, b: 2)  # [100, {:a=>1, :b=>2}]
+
+# インスタンスの作成
+arr = Array.new
+str = 'Hello!'
+p arr
+p arr.instance_of?(Array)  #=> true
+p str.instance_of?(Array)  #=> false
+
+str1 = "This is a pen."
+p str1.is_a?(String)
+p str1.is_a?(Object)
