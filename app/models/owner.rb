@@ -7,7 +7,7 @@ class Owner < ApplicationRecord
     def owner_name
       title = "classメソッドの使用"
       ret = "Ownerだよ!"
-      p title + ret
+      return title + ret
     end
   end
 end
