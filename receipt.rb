@@ -1,4 +1,10 @@
 class Receipt
+  class << self
+    def create_receipt_xyz
+      self.new("ストアXYZ")
+    end
+  end
+  
   def initialize(name)
     @name = name   # インスタンス変数の初期化
     @lines = []
