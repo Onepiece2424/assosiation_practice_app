@@ -1,10 +1,11 @@
 class Receipt
+  VERSION = "1.0.0"
   class << self
     def create_receipt_xyz
       self.new("ストアXYZ")
     end
   end
-  
+
   def initialize(name)
     @name = name   # インスタンス変数の初期化
     @lines = []
@@ -36,3 +37,4 @@ r.lines = [{name: "卵", price: 200, num: 1},
   {name: "大根", price: 100, num: 2}]
 
 r.output
+p Receipt::VERSION
